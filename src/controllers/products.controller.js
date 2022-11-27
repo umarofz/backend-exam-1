@@ -5,6 +5,7 @@ const GETPRODUCTS = (req, res) => {
     let categories = read('categories')
     let products = read('products')
     let { categoryId, subCategoryId, model, price, productName, color } = req.query
+    console.log(Boolean());
     if (req.query) {
         let filteredProducts =  products.filter(item => {
             let subCategory = subCategoryId ? item.sub_category_id == subCategoryId : true
@@ -19,10 +20,10 @@ const GETPRODUCTS = (req, res) => {
         if (filteredProducts.length) {
             return res.send(filteredProducts)
         }
-        
     } else {
         res.send([])
     }
+    
 }
 
 const GETPRODUCTSBYID = (req, res) => {
