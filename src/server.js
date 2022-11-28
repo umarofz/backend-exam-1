@@ -2,9 +2,9 @@ import express from 'express'
 import { GET, GETBYID, POST, DELETE, PUT } from './controllers/categories.controller.js';
 import { DELETEPRODUCTS, GETPRODUCTS, GETPRODUCTSBYID, POSTPRODUCTS, PUTPRODUCTS } from './controllers/products.controller.js';
 import { DELETESUBCATEGORIES, GETSUBCATEGORIES, GETSUBCATEGORIESBYID, POSTSUBCATEGORIES, PUTSUBCATEGORIES } from './controllers/subCategories.controller.js'
-const PORT = process.env || 5000
 const app = express();
 app.use( express.json() )
+const PORT = process.env || 5000
 
 app.get('/categories', GET)
 app.get('/categories/:id', GETBYID)
