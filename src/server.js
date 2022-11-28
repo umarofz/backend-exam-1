@@ -2,7 +2,7 @@ import express from 'express'
 import { GET, GETBYID, POST, DELETE, PUT } from './controllers/categories.controller.js';
 import { DELETEPRODUCTS, GETPRODUCTS, GETPRODUCTSBYID, POSTPRODUCTS, PUTPRODUCTS } from './controllers/products.controller.js';
 import { DELETESUBCATEGORIES, GETSUBCATEGORIES, GETSUBCATEGORIESBYID, POSTSUBCATEGORIES, PUTSUBCATEGORIES } from './controllers/subCategories.controller.js'
-
+const PORT = process.env || 5000
 const app = express();
 app.use( express.json() )
 
@@ -25,4 +25,4 @@ app.delete('/products/:id', DELETEPRODUCTS)
 app.put('/products/:id', PUTPRODUCTS)
 
 
-app.listen(5000, () => console.log('server ready at *5000'))
+app.listen(PORT, () => console.log('server ready at *5000'))
