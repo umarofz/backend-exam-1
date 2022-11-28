@@ -4,7 +4,7 @@ import { DELETEPRODUCTS, GETPRODUCTS, GETPRODUCTSBYID, POSTPRODUCTS, PUTPRODUCTS
 import { DELETESUBCATEGORIES, GETSUBCATEGORIES, GETSUBCATEGORIESBYID, POSTSUBCATEGORIES, PUTSUBCATEGORIES } from './controllers/subCategories.controller.js'
 const app = express();
 app.use( express.json() )
-const PORT = process.env || 5000
+const PORT = process.env.PORT || 5000
 
 app.get('/categories', GET)
 app.get('/categories/:id', GETBYID)
